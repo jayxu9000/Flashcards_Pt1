@@ -2,38 +2,36 @@ import './App.css';
 import { useState } from 'react';
 
 const App = () => {
+  const [index, setIndex] = useState(0);
+  const [isFront, setIsFront] = useState(true);
 
-  const [frontText, setFrontText] = useState('Start')
-  const [backText, setBackText] = useState('Press the next arrow to start the flashcards :)')
-  const [vid, setVid] = useState('')
-  const [index, setIndex] = useState(-1)
-  const [text, setText] = useState(frontText)
-
-  const frontData = ['Cupid', 'OMG', 'Antifragile', 'I AM', 'Seven']
-  const backData = ['Fifty Fifty', 'NewJeans', 'Le Sserafim', 'IVE', 'Jung Kook']
-  const vidData = ['https://www.youtube.com/watch?v=6uvUTu716rU', 'https://www.youtube.com/watch?v=_ZAgIHmHLdc', 'https://www.youtube.com/watch?v=pyf8cbqyfPs', 'https://www.youtube.com/watch?v=QU9c0053UAU']
+  const frontData = ['Cupid', 'OMG', 'Antifragile', 'I AM', 'Seven'];
+  const backData = ['Fifty Fifty', 'NewJeans', 'Le Sserafim', 'IVE', 'Jung Kook'];
 
   const flipCard = () => {
-    if (text == frontText) {
-      setText(backText)
-    } 
-    else {
-      setText(frontText)
+    setIsFront((prevIsFront) => !prevIsFront);
+  };
+
+  const nextCard = () => {
+    if (index < frontData.length - 1) {
+      setIndex((prevIndex) => prevIndex + 1);
+    } else {
+      setIndex(0); // Reset to the first card when at the end
     }
-  }
-  
-  const updateCard = () => {
-    if (index < 4) {
-      setIndex(index + 1)
+    setIsFront(true); // Show the front of the card when advancing to the next card
+  };
+
+  const getCurrentText = () => {
+    if (index === 0 && isFront) {
+      return "Start";
+    } else if (index === 0 && !isFront) {
+      return "Press the next arrow to start the flashcards :)";
+    } else {
+      return isFront ? frontData[index] : backData[index];
     }
-    else {
-      setIndex(0)
-    }
-    setText(frontData[index])
-    setFrontText(frontData[index])
-    setBackText(backData[index])
-    setVid(vidData[index])
-  }
+  };
+
+  const cardClassName = isFront ? 'card' : 'card flipped'; // Toggle the "flipped" class
 
   return (
     <div className="App">
@@ -41,10 +39,22 @@ const App = () => {
       <h4>Can you recognize the artist for this kpop song?</h4>
       <h5>Number of cards: 5</h5>
 
-      <div className='card' onClick={flipCard}>{text}</div>
-      <button onClick={updateCard}>⭢</button>
+      <div className={cardClassName} onClick={flipCard}>
+        {isFront ? (
+          <>
+            <div>
+              {index === 0 ? <p>Start</p> : <p>{getCurrentText()}</p>}
+            </div>
+          </>
+        ) : (
+          <div>
+            <p>{getCurrentText()}</p>
+          </div>
+        )}
+      </div>
+      <button onClick={nextCard}>⭢</button>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

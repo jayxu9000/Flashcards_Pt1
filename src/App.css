@@ -15,7 +15,7 @@
   font-weight: 700;
   height: 250px;
   cursor: pointer;
-  transition: .15s;
+  transition: transform 0.5s; /* Add a transition for smooth animation */
   transform: perspective(1000px) rotateX(var(--rotate-X, 0));
 }
 
@@ -24,5 +24,15 @@
   padding: 5px;
   justify-content: center;
   backface-visibility: hidden;
+  transition: opacity 0.5s; /* Add a transition for fading in and out */
+  opacity: 1; /* Start with full opacity */
 }
 
+/* Apply flip effect when the "flipped" class is present */
+.card.flipped .front {
+  opacity: 0; /* Hide the front when flipped */
+}
+
+.card.flipped .back {
+  opacity: 1; /* Show the back when flipped */
+}
