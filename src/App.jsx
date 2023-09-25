@@ -13,12 +13,9 @@ const App = () => {
   };
 
   const nextCard = () => {
-    if (index < frontData.length - 1) {
-      setIndex((prevIndex) => prevIndex + 1);
-    } else {
-      setIndex(0); // Reset to the first card when at the end
-    }
-    setIsFront(true); // Show the front of the card when advancing to the next card
+    const randomIndex = Math.floor(Math.random() * frontData.length);
+    setIndex(randomIndex);
+    setIsFront(true); // Show the front of the card
   };
 
   const getCurrentText = () => {
