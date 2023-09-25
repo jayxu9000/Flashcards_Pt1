@@ -2,11 +2,11 @@ import './App.css';
 import { useState } from 'react';
 
 const App = () => {
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(-1);
   const [isFront, setIsFront] = useState(true);
 
-  const frontData = ['Cupid', 'OMG', 'Antifragile', 'I AM', 'Seven'];
-  const backData = ['Fifty Fifty', 'NewJeans', 'Le Sserafim', 'IVE', 'Jung Kook'];
+  const frontData = ['Song 1: Cupid', 'Song 2: OMG', 'Song 3: Antifragile', 'Song 4: I AM', 'Song 5: Seven'];
+  const backData = ['Artist 1: Fifty Fifty', 'Artist 2: NewJeans', 'Artist 3: Le Sserafim', 'Artist 4: IVE', 'Artist 5: Jung Kook'];
 
   const flipCard = () => {
     setIsFront((prevIsFront) => !prevIsFront);
@@ -22,9 +22,9 @@ const App = () => {
   };
 
   const getCurrentText = () => {
-    if (index === 0 && isFront) {
+    if (index === -1 && isFront) {
       return "Start";
-    } else if (index === 0 && !isFront) {
+    } else if (index === -1 && !isFront) {
       return "Press the next arrow to start the flashcards :)";
     } else {
       return isFront ? frontData[index] : backData[index];
@@ -41,15 +41,9 @@ const App = () => {
 
       <div className={cardClassName} onClick={flipCard}>
         {isFront ? (
-          <>
-            <div>
-              {index === 0 ? <p>Start</p> : <p>{getCurrentText()}</p>}
-            </div>
-          </>
+          index === -1 ? <p>Start</p> : <p>{getCurrentText()}</p>
         ) : (
-          <div>
-            <p>{getCurrentText()}</p>
-          </div>
+          <p>{getCurrentText()}</p>
         )}
       </div>
       <button onClick={nextCard}>⭢</button>
