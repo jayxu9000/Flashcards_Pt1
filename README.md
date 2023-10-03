@@ -1,26 +1,26 @@
-# Web Development Project 2 - *Flashcards Pt 1*
+# Web Development Project 3 - *Flash Cards Pt 2*
 
 Submitted by: **Yuanjie Xu**
 
-This web app: **Identify Kpop artists from songs presented**
+This web app: **Adds arrows to sequence cards and an answer submission form.**
 
-Time spent: **3** hours spent in total
+Time spent: **1** hours spent in total
 
 ## Required Features
 
 The following **required** functionality is completed:
 
-- [ X ] **The title of the card set and some information about it, such as a short description and the total number of cards are displayed**
-- [ X ] **A single card at a time is displayed, only showing one of the components of the information pair**
-- [ X ] **A list of card pairs is created**
-- [ X ] **Clicking on the card shows the corresponding component of the information pair**
-- [ X ] **Clicking the next button displays a random new card**
+- [ X ] **The user can enter their guess in a box before seeing the flipside of the card**
+- [ X ] **Clicking on a submit button shows visual feedback about whether the answer was correct or incorrect**
+- [ X ] **A back button is displayed on the card and can be used to return to the previous card in a set sequence**
+- [ X ] **A next button is displayed on the card and can be used to navigate to the next card in a set sequence**
 
 The following **optional** features are implemented:
 
-- [ ] Cards contains images in addition to or in place of text
-- [ ] Cards have different visual styles such as color based on their category
-  - [ ] *visual style implemented*
+- [ ] A shuffle button is used to randomize the order of the cards
+- [ ] A user's answer may be counted as correct even when it is slightly different from the target answer
+- [ ] A counter displays the user's current and longest streak of correct responses
+- [ ] A user can mark a card that they have mastered and have it removed from the pool of answers as well as added to a list of mastered cards
 
 The following **additional** features are implemented:
 
@@ -28,15 +28,15 @@ The following **additional** features are implemented:
 
 ## Video Walkthrough
 
-Here's a walkthrough of implemented required features:
+Here's a walkthrough of implemented user stories:
 
-<img src='https://imgur.com/a/NMfBtpQ.gif' title='Flashcards Pt1_Yuanjie Xu' width='' alt='Flashcards Pt1_Yuanjie Xu' />
+<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Project 3_Walkthrough_Yuanjie Xu' width='' alt='Project 3_Walkthrough_Yuanjie Xu' />
 
-GIF created with LICEcap 
+GIF created with LICEcap
 
 ## Notes
 
-Had trouble with the CSS involving flipping the cards and also attempted to embed youtube videos for the songs but couldn't figure out how to do so.
+Created fairly quickly using part 1 of Flash Cards project.
 
 ## License
 
