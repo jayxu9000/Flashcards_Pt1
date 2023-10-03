@@ -30,7 +30,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Project 3_Walkthrough_Yuanjie Xu' width='' alt='Project 3_Walkthrough_Yuanjie Xu' />
+<img src='https://imgur.com/a/JXkItPJ.gif' title='Project 3_Walkthrough_Yuanjie Xu' width='' alt='Project 3_Walkthrough_Yuanjie Xu' />
 
 GIF created with LICEcap
 
